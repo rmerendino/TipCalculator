@@ -1,0 +1,40 @@
+import tkinter #python GUI
+
+eight = 0
+two = 0
+
+def calculate(event):
+    eight = int(text.get()) * 0.18
+    two = int(text.get()) * 0.2
+    eighteen.config(text = "18%: " + str(eight))
+    twenty.config(text = "20%: " + str(two))
+
+
+root = tkinter.Tk() #named our gui tool root
+
+root.title("Tip Calculator") #set the title of the GUI
+
+root.geometry("400x400") #set the size of the GUI
+
+instructions = tkinter.Label(root, text = "Enter the amount of your bill: ", font = ('Helvetica', 12))
+instructions.pack()
+
+label = tkinter.Label(root, text = "Pay this much tip:  ", font = ('Helvetica', 12))
+label.pack()
+
+text = tkinter.Entry(root) #creates the text box
+text.pack()
+
+eighteen = tkinter.Label(root, text = "18%: " + str(eight), font = ('Helvetica', 12))
+eighteen.pack()
+
+twenty = tkinter.Label(root, text = "20%: " + str(two), font = ('Helvetica', 12))
+twenty.pack()
+
+
+
+root.bind('<Return>', calculate) #program the return key to call the startGame function
+
+text.focus_set()
+
+root.mainloop() #starts the GUI
